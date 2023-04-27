@@ -3,7 +3,7 @@ import "./App.css";
 import Task from "./components/Task";
 import TaskTable from "./components/TaskTable";
 
-function App() {
+export function useMyHook() {
   const [taskItems, setTaskItems] = useState([]);
 
   const createNewTask = (taskName) => {
@@ -11,6 +11,11 @@ function App() {
       setTaskItems([...taskItems, { name: taskName, done: false }]);
     }
   };
+  return taskItems, setTaskItems, createNewTask;
+}
+
+function App() {
+  const { taskItems, setTaskItems, createNewTask } = useMyHook();
 
   const toggleTask = (task) => {
     setTaskItems(

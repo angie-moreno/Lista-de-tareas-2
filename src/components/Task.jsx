@@ -1,7 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import { useMyHook } from "../App";
 
-export default function ({ createNewTask }) {
+export default function () {
+  const { taskItems, createNewTask } = useMyHook();
+
   const [newTaskName, setNewTaskName] = useState("");
 
   const handleSubmit = (e) => {
