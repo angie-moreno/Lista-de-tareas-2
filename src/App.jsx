@@ -11,11 +11,13 @@ export function useMyHook() {
       setTaskItems([...taskItems, { name: taskName, done: false }]);
     }
   };
+
   const toggleTask = (task) => {
     setTaskItems(
       taskItems.map((t) => (t.name == task.name ? { ...t, done: !t.done } : t))
     );
   };
+
   const cleanTasks = () => {
     setTaskItems(taskItems.filter((task) => !task.done));
   };
