@@ -1,6 +1,8 @@
 import React from "react";
+import { useMyHook } from "../App";
 
-export default function TaskRow({ task, toggleTask, cleanTasks }) {
+export default function TaskRow({ task }) {
+  const { toggleTask, cleanTasks } = useMyHook();
   return (
     <tr>
       <td>

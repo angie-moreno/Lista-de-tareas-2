@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useMyHook } from "../App";
 
 export default function () {
-  const { taskItems, createNewTask } = useMyHook();
+  const { createNewTask } = useMyHook();
 
   const [newTaskName, setNewTaskName] = useState("");
 

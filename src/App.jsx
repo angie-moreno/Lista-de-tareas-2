@@ -11,12 +11,6 @@ export function useMyHook() {
       setTaskItems([...taskItems, { name: taskName, done: false }]);
     }
   };
-  return taskItems, setTaskItems, createNewTask;
-}
-
-function App() {
-  const { taskItems, setTaskItems, createNewTask } = useMyHook();
-
   const toggleTask = (task) => {
     setTaskItems(
       taskItems.map((t) => (t.name == task.name ? { ...t, done: !t.done } : t))
@@ -25,7 +19,6 @@ function App() {
   const cleanTasks = () => {
     setTaskItems(taskItems.filter((task) => !task.done));
   };
-
   useEffect(() => {
     let data = localStorage.getItem("tasks");
     if (data) {
@@ -36,6 +29,13 @@ function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(taskItems));
   }, [taskItems]);
+
+  return { taskItems, createNewTask, toggleTask, cleanTasks };
+}
+
+function App() {
+  const { taskItems, createNewTask, toggleTask, cleanTasks } = useMyHook();
+
   return (
     <div className="App">
       <Task createNewTask={createNewTask} />
