@@ -4,7 +4,8 @@ import Task from "./components/Task";
 import TaskTable from "./components/TaskTable";
 
 export function useMyHook() {
-  const [taskItems, setTaskItems] = useState([]);
+  let data = JSON.parse(localStorage.getItem("tasks"));
+  const [taskItems, setTaskItems] = useState(data ? data : []);
 
   const createNewTask = (taskName) => {
     if (!taskItems.find((task) => task.name === taskName)) {
@@ -21,12 +22,6 @@ export function useMyHook() {
   const cleanTasks = () => {
     setTaskItems(taskItems.filter((task) => !task.done));
   };
-  useEffect(() => {
-    let data = localStorage.getItem("tasks");
-    if (data) {
-      setTaskItems(JSON.parse(data));
-    }
-  }, []);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(taskItems));

@@ -2,8 +2,7 @@ import React from "react";
 import TaskRow from "./TaskRow";
 import { useMyHook } from "../App";
 
-export default function TaskTable({ tasks }) {
-  const { toggleTask, cleanTasks } = useMyHook();
+export default function TaskTable({ tasks, toggleTask, cleanTasks }) {
   return (
     <table>
       <thead>

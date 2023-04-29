@@ -1,8 +1,7 @@
 import React from "react";
 import { useMyHook } from "../App";
 
-export default function TaskRow({ task }) {
-  const { toggleTask, cleanTasks } = useMyHook();
+export default function TaskRow({ task, toggleTask, cleanTasks }) {
   return (
     <tr>
       <td>
@@ -10,7 +9,10 @@ export default function TaskRow({ task }) {
         <input
           type="checkbox"
           checked={task.done}
-          onChange={() => toggleTask(task)}
+          onChange={() => {
+            toggleTask(task);
+            task.done = !task.done;
+          }}
         />
         <button className="deletebutton" onClick={cleanTasks}>
           X
