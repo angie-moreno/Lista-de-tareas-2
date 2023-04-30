@@ -1,10 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { useMyHook } from "../App";
 
-export default function () {
-  const { createNewTask } = useMyHook();
-
+export default function Task({ createNewTask }) {
   const [newTaskName, setNewTaskName] = useState("");
 
   const handleSubmit = (e) => {
@@ -15,16 +12,20 @@ export default function () {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <input
-          type="text"
-          placeholder="Nueva tarea"
-          value={newTaskName}
-          onChange={(e) => setNewTaskName(e.target.value)}
-        />
-        <button>Guardar tarea</button>
-      </div>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>
+            <input
+              type="text"
+              placeholder="Nueva tarea"
+              value={newTaskName}
+              onChange={(e) => setNewTaskName(e.target.value)}
+            />
+          </label>
+          <button>Guardar tarea</button>
+        </div>
+      </form>
+    </div>
   );
 }

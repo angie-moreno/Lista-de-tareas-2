@@ -1,7 +1,11 @@
 import React from "react";
-import { useMyHook } from "../App";
 
-export default function TaskRow({ task, toggleTask, cleanTasks }) {
+export default function TaskRow({
+  task,
+  toggleTask,
+  cleanTasks,
+  cleanSingleTask,
+}) {
   return (
     <tr>
       <td>
@@ -14,7 +18,10 @@ export default function TaskRow({ task, toggleTask, cleanTasks }) {
             task.done = !task.done;
           }}
         />
-        <button className="deletebutton" onClick={cleanTasks}>
+        <button
+          className="deletebutton"
+          onClick={() => cleanSingleTask(task.name)}
+        >
           X
         </button>
       </td>
