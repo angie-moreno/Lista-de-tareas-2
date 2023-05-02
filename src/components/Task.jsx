@@ -6,6 +6,7 @@ export default function Task({ createNewTask }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     createNewTask(newTaskName);
 
     setNewTaskName("");
@@ -23,8 +24,14 @@ export default function Task({ createNewTask }) {
               onChange={(e) => setNewTaskName(e.target.value)}
             />
           </label>
-          <button>Guardar tarea</button>
         </div>
+        <div className="description">
+          <label>
+            Descripción de la Tarea
+            <input className="inputdescription" type="text"></input>
+          </label>
+        </div>
+        <button>Guardar tarea</button>
       </form>
     </div>
   );

@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <Task createNewTask={createNewTask} />
+
       <TaskTable
         tasks={taskItems}
         toggleTask={toggleTask}

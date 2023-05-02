@@ -26,5 +26,11 @@ export const useMyHook = () => {
     localStorage.setItem("tasks", JSON.stringify(taskItems));
   }, [taskItems]);
 
-  return { taskItems, createNewTask, toggleTask, cleanTasks, cleanSingleTask };
+  return {
+    taskItems,
+    createNewTask,
+    toggleTask,
+    cleanTasks,
+    cleanSingleTask,
+  };
 };
