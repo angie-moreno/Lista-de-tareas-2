@@ -6,6 +6,7 @@ export default function TaskTable({
   toggleTask,
   cleanTasks,
   cleanSingleTask,
+  editarTarea,
 }) {
   return (
     <table>
@@ -18,10 +19,11 @@ export default function TaskTable({
         {tasks.map((task) => (
           <TaskRow
             task={task}
-            key={task.name}
+            key={task.id}
             toggleTask={toggleTask}
             cleanTasks={cleanTasks}
             cleanSingleTask={cleanSingleTask}
+            editarTarea={editarTarea}
           />
         ))}
       </tbody>

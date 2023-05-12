@@ -1,11 +1,29 @@
 import { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 export const useMyHook = () => {
   let data = JSON.parse(localStorage.getItem("tasks"));
   const [taskItems, setTaskItems] = useState(data ? data : []);
 
-  const createNewTask = (taskName) => {
+  const auxiliarTareas = taskItems;
+
+  const editarTarea = (task) => {
+    const indice = taskItems.indexOf(task);
+    taskItems.splice(indice, 0, auxiliarTareas);
+
+    setTaskItems(auxiliarTareas);
+  };
+
+  const createNewTask = (taskName, taskDescription) => {
     if (!taskItems.find((task) => task.name === taskName)) {
-      setTaskItems([...taskItems, { name: taskName, done: false }]);
+      setTaskItems([
+        ...taskItems,
+        {
+          id: uuidv4(),
+          name: taskName,
+          done: false,
+          description: taskDescription,
+        },
+      ]);
     }
   };
 
@@ -32,5 +50,6 @@ export const useMyHook = () => {
     toggleTask,
     cleanTasks,
     cleanSingleTask,
+    editarTarea,
   };
 };

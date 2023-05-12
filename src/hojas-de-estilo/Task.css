@@ -1,0 +1,7 @@
+.tarea-contenedor {
+  width: 386px;
+  min-height: 30px;
+  margin: 5px 0;
+  padding: 8px 15px 8px 20px;
+  display: flex;
+}

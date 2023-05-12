@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import { AiFillDelete } from "react-icons/ai";
+import { AiFillEdit } from "react-icons/ai";
 
 export default function TaskRow({
   task,
   toggleTask,
-  cleanTasks,
   cleanSingleTask,
+  editarTarea,
 }) {
+  const [editMode, setEditMode] = useState(false);
+
   return (
     <tr>
       <td>
-        {task.name}
         <input
           type="checkbox"
           checked={task.done}
@@ -18,12 +21,27 @@ export default function TaskRow({
             task.done = !task.done;
           }}
         />
+        {task.name}
+        {task.description}
+
+        {editMode && <input onChange={() => editarTarea(task)} />}
+
         <button
           className="deletebutton"
           onClick={() => cleanSingleTask(task.name)}
         >
-          X
+          <AiFillDelete />
         </button>
+        <button className="editbutton" onClick={() => setEditMode(true)}>
+          <AiFillEdit />
+        </button>
+        {editMode && (
+          <input
+            type="submit"
+            value="Guardar"
+            onClick={() => editarTarea(task)}
+          />
+        )}
       </td>
     </tr>
   );
