@@ -7,10 +7,18 @@ export const useMyHook = () => {
   const auxiliarTareas = taskItems;
 
   const editarTarea = (task) => {
-    const indice = taskItems.indexOf(task);
-    taskItems.splice(indice, 0, auxiliarTareas);
+    const newTaskItems = taskItems.map((tarea) => {
+      if (tarea.id === task.id) {
+        return {
+          ...tarea,
+          name: task.name,
+          description: task.description,
+        };
+      }
+      return tarea;
+    });
 
-    setTaskItems(auxiliarTareas);
+    setTaskItems(newTaskItems);
   };
 
   const createNewTask = (taskName, taskDescription) => {

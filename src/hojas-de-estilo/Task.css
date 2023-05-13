@@ -5,3 +5,12 @@
   padding: 8px 15px 8px 20px;
   display: flex;
 }
+
+.error {
+  color: red;
+}
+.boton-guardar {
+  background-color: aquamarine;
+  font-weight: bold;
+  color: black;
+}

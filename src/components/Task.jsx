@@ -46,7 +46,11 @@ export default function Task({ createNewTask }) {
             {...register("descripcion")}
           ></textarea>
         </div>
-        <button disabled={!isValid} onClick={handleSubmit(onSubmit)}>
+        <button
+          className="boton-guardar"
+          disabled={!isValid}
+          onClick={handleSubmit(onSubmit)}
+        >
           Guardar tarea
         </button>
       </form>

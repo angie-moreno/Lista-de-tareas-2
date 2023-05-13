@@ -7,7 +7,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: bisque;
   font-family: Lato, sans-serif;
   justify-content: center;
   align-items: center;
@@ -21,18 +20,16 @@ h2 {
 
 .App {
   display: flex;
-
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
   min-height: 100vh;
   min-width: 100vh;
-
   width: 100%;
   border: 1 px solid black;
   border-radius: 20px;
-  background-color: coral;
+  background-color: lightsalmon;
 }
 .deletebutton {
   height: 30px;
