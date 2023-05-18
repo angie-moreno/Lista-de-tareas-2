@@ -3,6 +3,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { AiFillEdit } from "react-icons/ai";
 import { useForm } from "react-hook-form";
 import "../hojas-de-estilo/TaskRow.css";
+import { Text } from "@chakra-ui/react";
 
 export default function TaskRow({
   task,
@@ -39,8 +40,12 @@ export default function TaskRow({
         />
         {!editMode && (
           <div>
-            <p> {task.name}</p>
-            <p>{task.description}</p>
+            <Text fontSize="xl" color="RGBA(0, 0, 0, 0.92)" mr="10px" ml="10px">
+              {task.name}
+            </Text>
+            <Text fontSize="xl" color="RGBA(0, 0, 0, 0.92)">
+              {task.description}
+            </Text>
           </div>
         )}
 

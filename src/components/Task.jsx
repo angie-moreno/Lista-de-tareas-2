@@ -40,7 +40,7 @@ export default function Task({ createNewTask }) {
         </div>
         <div>
           <textarea
-            rows="10"
+            rows="3"
             cols="50"
             placeholder="Describe tu tarea"
             {...register("descripcion")}

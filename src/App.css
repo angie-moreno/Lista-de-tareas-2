@@ -5,17 +5,8 @@
 }
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: Lato, sans-serif;
   justify-content: center;
   align-items: center;
-}
-h2 {
-  font-size: 25px;
-  font-family: Roboto, sans-serif;
-  text-align: center;
-  margin: 20px 0;
 }
 
 .App {
@@ -26,16 +17,16 @@ h2 {
   flex-direction: column;
   min-height: 100vh;
   min-width: 100vh;
-  width: 100%;
   border: 1 px solid black;
   border-radius: 20px;
-  background-color: lightsalmon;
 }
 .deletebutton {
+  background-color: blue;
   height: 30px;
   width: 30px;
 }
 .editbutton {
+  background-color: blue;
   min-height: 30px;
   min-width: 30px;
 }
