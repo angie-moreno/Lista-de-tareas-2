@@ -51,7 +51,7 @@ export default function Task({ createNewTask }) {
           disabled={!isValid}
           onClick={handleSubmit(onSubmit)}
         >
-          Guardar tarea
+          GUARDAR TAREA
         </button>
       </form>
     </div>
