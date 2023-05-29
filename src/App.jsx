@@ -4,7 +4,7 @@ import Tareas from "./Pages/Tareas.jsx";
 import SobreNosotros from "./Pages/SobreNosotros";
 import Menu from "./Pages/Menu";
 import { Grid, GridItem, Box } from "@chakra-ui/react";
-import bgImage from "../src/images/listadetareas.jpg";
+import bgImage from "../src/images/fondoVerano.png";
 import eImage from "../src/images/encabezado.jpg";
 
 function App() {
