@@ -5,7 +5,6 @@
 ## Descripción
 
 En este proyecto, he utilizado Chakra UI para mejorar la interfaz de usuario de mi aplicación. Chakra UI es una biblioteca de componentes gráficos que proporciona una base sólida y fácil de usar para crear interfaces atractivas y receptivas.
-![](C:\Users\hp\Desktop\GitHub\REACT\imagenes)
 
 ## Utilización de los componentes gráficos de Chakra UI
 
